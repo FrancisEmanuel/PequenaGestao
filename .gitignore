@@ -1,0 +1,7 @@
+# AQUI FICA OS ARQUIVOS QUE QUEREMOS SUBIR
+
+# See the name for you IDE
+.idea
+# If you are using sqlite3
+*.sqlite3
+*pyc
