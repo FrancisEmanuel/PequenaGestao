@@ -3,6 +3,7 @@ from django.db import models
 class Produto(models.Model):
     nome_produto = models.CharField(max_length=50)
     descricao = models.CharField(max_length=100)
+    unidade = models.CharField(max_length=5)
 
 
     def __str__(self):
