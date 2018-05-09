@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'bootstrapform',
     'clientes',
     'home',
+    'produtos',
 ]
 
 MIDDLEWARE = [
@@ -128,6 +129,12 @@ MEDIA_ROOT = 'media'
 
 LOGIN_URL ='/login/'
 
-LOGIN_REDIRECT_URL = 'person_list'
+LOGIN_REDIRECT_URL = 'home_main'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+STATICFILES_DIRS = [
+    'statics',
+]
+
+STATIC_URL = '/static/'

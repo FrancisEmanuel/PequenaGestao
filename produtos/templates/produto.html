@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %}Administracao{% endblock %}
+
+{% block main %}
+
+    <h1>Produtos</h1>
+    <a href="{% url 'new_produto' %}" class="btn btn-primary"> Novo Produto</a>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Produto</th>
+          <th scope="col">Descrição</th>
+            <th scope="col"></th>
+        </tr>
+      </thead>
+
+    {% for produto in produtos %}
+        <tbody>
+            <tr>
+              <th scope="row">{{produto.id}}</th>
+              <td>{{produto.nome_produto}}</td>
+              <td>{{produto.descricao}}</td>
+              <td>
+                  <a href="{% url 'update_produto' produto.id %}" class="pencil-item">
+                    <i class="fa fa-pencil" aria-hidden="true"></i></a>
+                  <a href="{% url 'delete_produto' produto.id %}" class="trash-item">
+                    <i class="fa fa-trash" aria-hidden="true"></i></a>
+              </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+
+
+    </table>
+
+
+{% endblock %}
+
